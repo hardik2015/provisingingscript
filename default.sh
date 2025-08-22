@@ -208,7 +208,10 @@ if [[ -f "requirements.txt" ]]; then
     echo "Installing Python dependencies..."
     pip install --no-cache-dir -r requirements.txt
 fi
+# === Grab Caddy (Open Button) Token ===
+BEARER_TOKEN="${OPEN_BUTTON_TOKEN}"
 
-# ---- Run the Python app on port 5010 ----
+echo "Using Bearer Token: ${BEARER_TOKEN}"
+
 echo "Starting Influenc app on port 5010..."
-nohup python3 comyui_prompt_api.py --port 5010 --host 0.0.0.0 > /workspace/influenc.log 2>&1 &
+nohup python3 comyui_prompt_api.py "${EXTRA_ARG1}" "${EXTRA_ARG2}" "${EXTRA_ARG3}" "${BEARER_TOKEN}"> /workspace/influenc.log 2>&1 &
