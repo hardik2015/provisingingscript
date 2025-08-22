@@ -27,7 +27,7 @@ WORKFLOWS=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://civitai.com/api/download/models/2042701?type=Model\&format=SafeTensor\&size=pruned\&fp=fp16\&token=478344955d4195934a665cbcd9ff1651"
+    "https://civitai.com/api/download/models/2042701?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=478344955d4195934a665cbcd9ff1651"
 )
 
 UNET_MODELS=(
