@@ -211,4 +211,4 @@ fi
 
 # ---- Run the Python app on port 5010 ----
 echo "Starting Influenc app on port 5010..."
-nohup python3 app.py --port 5010 --host 0.0.0.0 > /workspace/influenc.log 2>&1 &
+nohup python3 comyui_prompt_api.py --port 5010 --host 0.0.0.0 > /workspace/influenc.log 2>&1 &
