@@ -44,7 +44,7 @@ ESRGAN_MODELS=(
 )
 
 ULTRALYTICS=(
-    "https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8s.pt",
+    "https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8s.pt"
     "https://huggingface.co/Bingsu/adetailer/resolve/main/hand_yolov8s.pt"
 )
 
