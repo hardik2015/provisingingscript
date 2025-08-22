@@ -25,7 +25,7 @@ WORKFLOWS=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://civitai.com/api/download/models/798204?type=Model&format=SafeTensor&size=full&fp=fp16"
+    "https://civitai.com/api/download/models/2042701?type=Model\&format=SafeTensor\&size=pruned\&fp=fp16\&token=478344955d4195934a665cbcd9ff1651"
 )
 
 UNET_MODELS=(
@@ -38,6 +38,12 @@ VAE_MODELS=(
 )
 
 ESRGAN_MODELS=(
+    "https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/4x-UltraSharp.pth"
+)
+
+ULTRALYTICS=(
+    "https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8s.pt",
+    "https://huggingface.co/Bingsu/adetailer/resolve/main/hand_yolov8s.pt"
 )
 
 CONTROLNET_MODELS=(
