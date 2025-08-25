@@ -34,6 +34,7 @@ UNET_MODELS=(
 )
 
 LORA_MODELS=(
+    "https://huggingface.co/tianweiy/DMD2/resolve/main/dmd2_sdxl_4step_lora.safetensors"
 )
 
 VAE_MODELS=(
