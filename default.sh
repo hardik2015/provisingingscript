@@ -19,7 +19,7 @@ PIP_PACKAGES=(
 
 NODES=(
     "https://github.com/ltdrdata/ComfyUI-Manager"
-    #"https://github.com/cubiq/ComfyUI_essentials"
+    "https://github.com/Goktug/comfyui-saveimage-plus"
 )
 
 WORKFLOWS=(
@@ -27,29 +27,28 @@ WORKFLOWS=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://civitai.com/api/download/models/2145543?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=478344955d4195934a665cbcd9ff1651"
+    "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_fp8_e4m3fn.safetensors"
 )
 
 UNET_MODELS=(
 )
 
 LORA_MODELS=(
-    "https://huggingface.co/tianweiy/DMD2/resolve/main/dmd2_sdxl_4step_lora.safetensors"
 )
 
 VAE_MODELS=(
+    "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors"
 )
 
 ESRGAN_MODELS=(
-    "https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/4x-UltraSharp.pth"
+    "https://huggingface.co/utnah/esrgan/resolve/main/4x-AnimeSharp.pth"
 )
 
 ULTRALYTICS=(
-    "https://huggingface.co/Bingsu/adetailer/resolve/main/face_yolov8s.pt"
-    "https://huggingface.co/Bingsu/adetailer/resolve/main/hand_yolov8s.pt"
 )
 
-CONTROLNET_MODELS=(
+TEXT_ENCODERS=(
+    "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -60,7 +59,7 @@ function provisioning_start() {
     provisioning_get_nodes
     provisioning_get_pip_packages
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/checkpoints" \
+        "${COMFYUI_DIR}/models/diffusion_models" \
         "${CHECKPOINT_MODELS[@]}"
     provisioning_get_files \
         "${COMFYUI_DIR}/models/unet" \
@@ -78,8 +77,8 @@ function provisioning_start() {
         "${COMFYUI_DIR}/models/upscale_models" \
         "${ESRGAN_MODELS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/ultralytics/bbox" \
-        "${ULTRALYTICS[@]}"
+        "${COMFYUI_DIR}/models/text_encoders" \
+        "${TEXT_ENCODERS[@]}"
     provisioning_print_end
 }
 
