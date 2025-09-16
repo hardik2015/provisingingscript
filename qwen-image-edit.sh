@@ -188,3 +188,34 @@ function provisioning_download() {
 if [[ ! -f /.noprovisioning ]]; then
     provisioning_start
 fi
+
+# Allow user to disable provisioning if they started with a script they didn't want
+if [[ ! -f /.noprovisioning ]]; then
+    provisioning_start
+fi
+
+cd /workspace
+if [[ ! -d "influenc" ]]; then
+    echo "Cloning Influenc repository..."
+    git clone https://github.com/hardik2015/influenc.git
+else
+    echo "Updating Influenc repository..."
+    cd influenc && git pull && cd ..
+fi
+
+# Navigate to repo
+cd influenc
+
+# Activate venv and install dependencies
+source /venv/main/bin/activate
+if [[ -f "requirements.txt" ]]; then
+    echo "Installing Python dependencies..."
+    pip install --no-cache-dir -r requirements.txt
+fi
+# === Grab Caddy (Open Button) Token ===
+BEARER_TOKEN="${OPEN_BUTTON_TOKEN}"
+
+echo "Using Bearer Token: ${BEARER_TOKEN}"
+
+echo "Starting Influenc app on port 5010..."
+nohup python3 comyui_prompt_api.py "${EXTRA_ARG1}" "${EXTRA_ARG2}" "${EXTRA_ARG3}" "${BEARER_TOKEN}"> /workspace/influenc.log 2>&1 &
