@@ -197,7 +197,7 @@ fi
 cd /workspace
 if [[ ! -d "influenc" ]]; then
     echo "Cloning Influenc repository..."
-    git clone https://github.com/hardik2015/influenc.git
+    git clone -b imgage-edit https://github.com/hardik2015/influenc.git
 else
     echo "Updating Influenc repository..."
     cd influenc && git pull && cd ..
