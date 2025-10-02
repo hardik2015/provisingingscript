@@ -32,6 +32,7 @@ UNET_MODELS=(
 
 LORA_MODELS=(
     "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-8steps-V2.0.safetensors"
+    "https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V2.0.safetensors"
 )
 
 VAE_MODELS=(
