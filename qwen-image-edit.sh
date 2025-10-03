@@ -40,6 +40,7 @@ VAE_MODELS=(
 )
 
 ESRGAN_MODELS=(
+    "https://huggingface.co/utnah/esrgan/resolve/main/4x-AnimeSharp.pth"
 )
 
 ULTRALYTICS=(
