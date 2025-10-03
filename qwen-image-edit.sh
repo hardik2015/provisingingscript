@@ -217,7 +217,8 @@ fi
 # === Grab Caddy (Open Button) Token ===
 BEARER_TOKEN="${OPEN_BUTTON_TOKEN}"
 
-echo "Using Bearer Token: ${BEARER_TOKEN}"
+echo "move start.png to /workspace/ComfyUI/input"
+mv start.png /workspace/ComfyUI/input
 
 echo "Starting Influenc app on port 5010..."
 nohup python3 comyui_prompt_api.py "${EXTRA_ARG1}" "${EXTRA_ARG2}" "${EXTRA_ARG3}" "${BEARER_TOKEN}"> /workspace/influenc.log 2>&1 &
